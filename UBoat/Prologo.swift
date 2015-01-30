@@ -66,7 +66,7 @@ class Prologo: SKScene, SKPhysicsContactDelegate {
         label.text = prologo
         label.fontColor = UIColor.blackColor()
         label.fontSize = 30
-        label.
+      // label.
         
    /*     var formatotexto : SKLabelVerticalAlignmentMode
         enum formatotexto : Int {
