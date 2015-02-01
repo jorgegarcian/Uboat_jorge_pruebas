@@ -13,11 +13,19 @@ import SpriteKit
 class Prologo: SKScene, SKPhysicsContactDelegate {
     
     var fondo = SKSpriteNode()
+    var credito = SKSpriteNode()
     let prologo = "Alerta Alerta nos quedamos sin oxigeno.\n Emergemos en zona hostil,preparados para el enfrentamiento."
+    let velocidadcre: CGFloat = 2
+    
+    override func update(currentTime: NSTimeInterval) {
+       
+        scrollcredito()
+    }
     
     override func didMoveToView(view: SKView) {
         
         imagenPeriscopio()
+        
        
     /*    if   enemigo=1
         {
@@ -28,6 +36,7 @@ class Prologo: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    
     func imagenPeriscopio() {
         
         fondo = SKSpriteNode(imageNamed: "periscopio")
@@ -35,55 +44,47 @@ class Prologo: SKScene, SKPhysicsContactDelegate {
         fondo.size = self.size
         addChild(fondo)
         
+  
+        credito = SKSpriteNode(imageNamed: "prologo")
+        credito.anchorPoint = CGPointMake(0, 0)
+        credito.position = CGPointMake(0 , +10)
+        
+        
+        credito.setScale(0.9)
+        credito.zPosition = 1
+    //    credito.position = CGPointMake(self.position.x + 190, self.position.y + 190)
+        credito.alpha = 0.5
+        //credito.constraints = [Juego.constraint]
+        credito.name = "creditos"
+        addChild(credito)
+        
+        
     }
 
     func llamada() {
         
-     /*   let UITextView = SKLabelNode(fontNamed: "Avenir")
+ /*       let UITextView = SKLabelNode(fontNamed: "Avenir")
        
         UITextView.text = prologo
         UITextView.fontColor = UIColor.blackColor()
-        
+        UITextView.frame.size.height / 20
+            //self.frame.height / 2
+        //self.frame.width ; 10
         UITextView.fontSize = 25
-        UITextView.position = CGPoint(x: size.width / 2 - 50, y: size.height / 2)
+        
+        //UITextView.position = CGPoint(x: size.width  - 50, y: size.height / 3)
         UITextView.name = "caja_prologo"
         addChild(UITextView)
-       */
-       /* enum SKLabelVerticalAlignmentMode : Int {
-            case Baseline
-            case Center
-            case Top
-            case Bottom
-        }
-        */
-        enum  SKLabelHorizontalAlignmentMode : Int {
-            case Center
-            case Left
-            case Right
-        
-        }
-        let label = SKLabelNode(fontNamed: "Avenir")
+   */    
+   /*     let label = SKLabelNode(fontNamed: "Avenir")
         label.text = prologo
         label.fontColor = UIColor.blackColor()
         label.fontSize = 30
-        label.
-        
-   /*     var formatotexto : SKLabelVerticalAlignmentMode
-        enum formatotexto : Int {
-            case center}
-        
-        }
-     */   //label(NSTextAlignment  JustificationFlags
-    
         label.position = CGPoint(x: size.width / 2 - 50, y: size.height / 2)
         label.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame) )
-        
-       // label.position = CGPointMake(120, self.frame.height - 25)
         label.name = "prologo"
-        
-      
         addChild(label)
-      //  Juego.escena volverMenu()
+     */ //  Juego.escena volverMenu()
  
             
         //llamamos ejecutamos la secuencia para que cambie solo a la pantalla de juego
@@ -91,7 +92,7 @@ class Prologo: SKScene, SKPhysicsContactDelegate {
             SKAction.waitForDuration(4.0),
             SKAction.runBlock() {
                 
-                let aparecer = SKTransition.flipHorizontalWithDuration(1)
+                let aparecer = SKTransition.flipHorizontalWithDuration(1.5)
                 let pantalla = Juego(size: self.size)
                 self.view?.presentScene(pantalla, transition: aparecer)
             }
@@ -106,6 +107,29 @@ class Prologo: SKScene, SKPhysicsContactDelegate {
         
         
     }
+    
+    func scrollcredito() {
+        
+        self.enumerateChildNodesWithName("prologo", usingBlock: { (nodo, stop) -> Void in
+            if let credito = nodo as? SKSpriteNode {
+                println("la crecido posicion x + credito.posicion.y")
+                credito.position = CGPoint(
+                    x: credito.position.x - self.velocidadcre,
+                    y: credito.position.y)
+                
+                if credito.position.x <= -credito.size.width {
+                    
+                    credito.position = CGPointMake(
+                        credito.position.x + credito.size.width * 2,
+                        credito.position.y)
+                }
+            }
+        })
+        
+    }
+
+    
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
         let tocarLabel: AnyObject = touches.anyObject()!
