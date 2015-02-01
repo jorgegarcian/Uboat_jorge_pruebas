@@ -24,6 +24,7 @@ import SpriteKit
        
         
     }
+        
     
     
     func imagenPeriscopio() {
@@ -34,6 +35,7 @@ import SpriteKit
         addChild(fondo)
         
     }
+        
     
     
     
