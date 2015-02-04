@@ -16,6 +16,8 @@ import AVFoundation
 
 class Juego: SKScene, SKPhysicsContactDelegate {
     
+    
+    
     let constraint = SKConstraint.zRotation(SKRange(constantValue: 0))
     var fondo = SKSpriteNode()
     var fdcielo = SKSpriteNode()
@@ -86,7 +88,7 @@ class Juego: SKScene, SKPhysicsContactDelegate {
         self.physicsWorld.contactDelegate  = self
         backgroundColor = UIColor.cyanColor()
         
-        
+        volverMenu() // solo para hacer pruebas y no tener qeu jugar
         heroe()
         prismaticos()
         crearCielo()
@@ -194,6 +196,7 @@ class Juego: SKScene, SKPhysicsContactDelegate {
         menuLabel.zPosition = 6
         menuLabel.position = CGPointMake(self.frame.width / 2, self.frame.height / 2 - 100)
         menuLabel.text = "Game Over"
+        
         addChild(menuLabel)
   
     runAction(SKAction.sequence([
@@ -201,7 +204,7 @@ class Juego: SKScene, SKPhysicsContactDelegate {
     SKAction.runBlock() {
     
     let aparecer = SKTransition.flipHorizontalWithDuration(1)
-    let pantalla = marca (size: self.size)
+    let pantalla = marca(size: self.size)
     self.view?.presentScene(pantalla, transition: aparecer)
     }
     

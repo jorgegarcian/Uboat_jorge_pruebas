@@ -33,6 +33,7 @@
 		9AFA73011A72ABDA007AFB51 /* SubNavegando.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 9AFA73001A72ABDA007AFB51 /* SubNavegando.atlas */; };
 		CF71709D1A77FD2E002A3F9A /* marca.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF71709C1A77FD2E002A3F9A /* marca.swift */; };
 		CF7E3DC21A7741D700CD4953 /* Prologo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7E3DC11A7741D700CD4953 /* Prologo.swift */; };
+		CFBD33AA1A7DBDA000B34AF0 /* prologo.png in Resources */ = {isa = PBXBuildFile; fileRef = CFBD33A91A7DBDA000B34AF0 /* prologo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		9AFA73001A72ABDA007AFB51 /* SubNavegando.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = SubNavegando.atlas; path = UBoat/SubNavegando.atlas; sourceTree = "<group>"; };
 		CF71709C1A77FD2E002A3F9A /* marca.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = marca.swift; sourceTree = "<group>"; };
 		CF7E3DC11A7741D700CD4953 /* Prologo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prologo.swift; sourceTree = "<group>"; };
+		CFBD33A91A7DBDA000B34AF0 /* prologo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = prologo.png; path = UBoat/prologo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		88130D331A52A2C300802E87 = {
 			isa = PBXGroup;
 			children = (
+				CFBD33A91A7DBDA000B34AF0 /* prologo.png */,
 				884BFE111A710C9200B8C94A /* AVFoundation.framework */,
 				889A0B801A5D2D55000BF2C3 /* submarinoExplota.atlas */,
 				889A0B811A5D2D55000BF2C3 /* enemigoExplota.atlas */,
@@ -264,6 +267,7 @@
 				884BFE101A710B8B00B8C94A /* salidaTorpedo.wav in Resources */,
 				88130D701A52A39300802E87 /* estelaSubmarino.sks in Resources */,
 				88130D761A52A3B700802E87 /* Images.xcassets in Resources */,
+				CFBD33AA1A7DBDA000B34AF0 /* prologo.png in Resources */,
 				88130D6F1A52A39300802E87 /* explosionSubmarino.sks in Resources */,
 				9AFA73011A72ABDA007AFB51 /* SubNavegando.atlas in Resources */,
 				9A6873631A6573B900CC4BF7 /* estelaSubIzq.sks in Resources */,

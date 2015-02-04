@@ -15,24 +15,31 @@ class marca : Juego  {
     
     override func didMoveToView(view: SKView) {
         
+        imagenPeriscopio()
         pintado()
         
     }
     
+    func imagenPeriscopio() {
+        
+        fondo = SKSpriteNode(imageNamed: "periscopio")
+        fondo.position = CGPoint(x: size.width / 2 , y: size.height / 2)
+        fondo.size = self.size
+        addChild(fondo)
+        
+    }
     func pintado (){
-    var score : Juego!
         
-        
-    
-
-    let label = SKLabelNode( fontNamed: "Avenir")
-  //      label.text = "\(score.contadorImpactosLabel)"
-    label.text = "jpña"
-    label.fontSize = 30
-    label.position = CGPoint(x: size.width / 2 - 50, y: size.height / 2)
-    label.name = "Cambiar"
-    label.zPosition = 25
-    addChild(label)
+        var score : Juego!
+        let label = SKLabelNode( fontNamed: "Avenir")
+        label.fontColor = UIColor.blackColor()
+     // label.text = "\(score.contadorImpactosLabel)"
+        label.text = "Puntuanciones del Juego"
+        label.fontSize = 20
+        label.position = CGPoint(x: size.width / 2 - 100, y: size.height - 50)
+        label.name = "Cambiar"
+        label.zPosition = 1
+        addChild(label)
     }
     
     

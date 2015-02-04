@@ -47,13 +47,12 @@ class Prologo: SKScene, SKPhysicsContactDelegate {
   
         credito = SKSpriteNode(imageNamed: "prologo")
         credito.anchorPoint = CGPointMake(0, 0)
-        credito.position = CGPointMake(0 , +10)
+        credito.position = CGPointMake(0 ,  fondo.size.height / 2 - 225)
         
-        
-        credito.setScale(0.9)
+     //   credito.setScale(0.9)
         credito.zPosition = 1
     //    credito.position = CGPointMake(self.position.x + 190, self.position.y + 190)
-        credito.alpha = 0.5
+       // credito.alpha = 0.5
         //credito.constraints = [Juego.constraint]
         credito.name = "creditos"
         addChild(credito)
@@ -92,7 +91,7 @@ class Prologo: SKScene, SKPhysicsContactDelegate {
             SKAction.waitForDuration(4.0),
             SKAction.runBlock() {
                 
-                let aparecer = SKTransition.flipHorizontalWithDuration(1.5)
+                let aparecer = SKTransition.flipHorizontalWithDuration(2.5)
                 let pantalla = Juego(size: self.size)
                 self.view?.presentScene(pantalla, transition: aparecer)
             }
